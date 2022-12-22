@@ -715,6 +715,7 @@ button,
   min-height: 47.26563rem;
   background-color: #0077ff;
   color: #ffffff;
+  overflow: hidden;
 }
 
 .intro::before {

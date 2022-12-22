@@ -6,6 +6,8 @@
   background-color: $color-primary-blue;
   color: $color-default-white;
 
+  overflow: hidden;
+
   @include vp-767 {
     display: flex;
     flex-direction: column;
