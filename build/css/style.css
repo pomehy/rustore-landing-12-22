@@ -593,6 +593,10 @@ button,
   padding-top: 5.625rem;
 }
 
+.wrapper--no-header main {
+  padding-top: 0;
+}
+
 .wrapper--blue {
   background-color: #0077ff;
 }
