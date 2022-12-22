@@ -1834,6 +1834,17 @@ button,
     flex-direction: column;
     padding-bottom: 13.75rem;
     min-height: 280.3125rem;
+    overflow: visible;
+  }
+
+  .intro::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 31.25rem;
+    bottom: -28.125rem;
+    background-color: #0077ff;
   }
 
   .intro::before {
