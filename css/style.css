@@ -1632,6 +1632,7 @@ button,
 .app-list__link {
   margin-top: 1.875rem;
   margin-left: auto;
+  font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.5625rem;
   color: #0077ff;
