@@ -1,0 +1,17 @@
+.round {
+  padding-top: size(6px);
+  padding-right: size(50px);
+  padding-left: size(42px);
+  border: size(3px) solid $color-default-black;
+  border-radius: size(50px);
+}
+
+.rect {
+  border: size(3px) solid $color-default-black;
+}
+
+.special {
+  color: $color-default-white;
+  background-color: $color-primary-blue;
+  border: size(3px) solid $color-primary-blue;
+}

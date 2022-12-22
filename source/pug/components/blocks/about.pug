@@ -1,0 +1,35 @@
+-
+  const aboutItems = [
+    {
+      title: 'Цель команды RuStore',
+      titleImg: {
+        name: 'target-team-img',
+        width: 352,
+        height: 121,
+      },
+      description: 'Создать удобный и&nbsp;безопасный магазин приложений, доступный любому пользователю и&nbsp;разработчику.',
+    },
+    {
+      title: 'Кто работает над RuStore',
+      titleImg: {
+        name: 'dev-rustore',
+        width: 356,
+        height: 121,
+      },
+      description: 'Проект разрабатывает VK при&nbsp;поддержке крупнейших IT&nbsp;компаний России.',
+    },
+  ]
+
+mixin about()
+  section.about
+    //- вставлять блоки во внешний контейнер неверно
+    //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    h2.visually-hidden Немного о RuStore
+    +img-svg("svg", "hand-peace", "svg", 240, 268, "").about__bg
+    .container
+      .about__grid
+        each item in aboutItems
+          article.about-item
+            +icon(item.titleImg.name, item.titleImg.width, item.titleImg.height).about-item__title-img
+            h3.about-item__title.visually-hidden !{item.title}
+            p.about-item__description !{item.description}

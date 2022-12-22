@@ -1,0 +1,29 @@
+mixin header(headerMods, currentPage)
+  //- -
+  //-   const headerLinks = [
+  //-     {
+  //-       href: "#",
+  //-       text: "Страница 1"
+  //-     },
+  //-     {
+  //-       href: "#",
+  //-       text: "Страница 2"
+  //-     },
+  //-     {
+  //-       href: "#",
+  //-       text: "Страница 3"
+  //-     },
+  //-   ]
+
+  header.header(class=headerMods, data-header)
+    .container
+      //- if(currentPage === "index")
+      //-   //- lighthouse снимает 10 баллов SEO за <a> без href
+      //-   span.header__logo
+      //-     +icon("logo-color", 162, 142).logo
+      //- else
+      a.header__logo(href="https://rustore.ru", aria-label="Переход на главную" data-fix-block)
+        +icon("logo-color", 162, 142).logo
+      a.header__button.button(href="https://rustore.ru/instruction.html") #[span.button__text Скачать #[span.is-hidden RuStore]]
+        +icon('button-bg-header', "100%", 44).button__bg.is-hidden
+        +icon('button-bg-header-mob', "100%", 28).button__bg

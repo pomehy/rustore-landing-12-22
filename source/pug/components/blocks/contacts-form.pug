@@ -1,0 +1,78 @@
+mixin contacts-form()
+  section.contacts-form
+    //- вставлять блоки во внешний контейнер неверно
+    //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    .container
+      .contacts-form__header
+        //- h1.contacts-form__title.title #[+icon("icon-arrow-title", 84, 84)] #[span.round Форма] #[span.rect для]#[span.round ваших] #[span.special RuStore]
+        +icon("icon-starlight", 74, 74).icon-starlight
+        h1.visually-hidden Форма для ваших контактов
+        +icon("form-title", 497, 303).contacts-form__title-img-des
+        +icon("form-title-mob", 207, 202).contacts-form__title-img-mob
+        +img-svg("svg", "hand-peace", "svg", 363, 545, "").contacts-form__img-bg
+
+        .contacts-form__img-wrapper
+      .contacts-form__body
+        .contacts-form__content(data-validate)
+          p.contacts-form__subtitle Сделаем RuStore ещё&nbsp;лучше
+          p.contacts-form__description Мы&nbsp;команда RuStore и&nbsp;каждый день мы&nbsp;работаем над улучшением нашего продукта. Оставляйте ваши контакты и&nbsp;участвуйте в&nbsp;исследованиях, чтобы помочь сделать RuStore еще лучше!
+          form(action="send.php" method="POST" autocomplete="off")
+            .contacts-form__inner
+              +custom-input({
+                inputPlaceholder: "Как вас зовут? (Фамилия и имя)*",
+                inputId: "user-name",
+                inputName: "user-name",
+                inputMaxLength: "100",
+                inputType: "text",
+                dataValidateType: "text",
+                inputError: "Поле заполнено неверно"
+              }).contacts-form__input-name
+              +custom-input({
+                inputPlaceholder: "Email*",
+                inputId: "user-mail",
+                inputName: "user-mail",
+                inputType: "email",
+                dataValidateType: "email",
+                inputError: "Поле заполнено неверно"
+              })
+              +custom-input({
+                inputPlaceholder: "Телефон",
+                inputId: "user-phone",
+                inputName: "user-phone",
+                inputType: "tel",
+                dataValidateType: "phone",
+              })
+              +custom-input({
+                inputPlaceholder: "Ник в Telegram (через @)*",
+                inputId: "user-telegram",
+                inputName: "user-telegram",
+                inputType: "text",
+                inputMinLength: 5,
+                inputMaxLength: 33,
+                dataValidateType: "text",
+                inputError: "Поле заполнено неверно"
+              })
+              +custom-input({
+                inputPlaceholder: "Какую компанию представляете?*",
+                inputId: "user-company",
+                inputName: "user-company",
+                inputType: "text",
+                dataValidateType: "text",
+                inputError: "Поле заполнено неверно"
+              })
+              +custom-textarea({
+                inputPlaceholder: "Комментарии",
+                inputId: "user-comment",
+                inputName: "user-comment",
+              })
+            .contacts-form__footer
+              .contacts-form__note.custom-toggle.custom-toggle--checkbox(data-validate-type="checkbox")
+                  label
+                    input(type="checkbox", name="subscription-terms" id="subscription-terms").visually-hidden
+                    span.custom-toggle__icon
+                      +icon("icon-checkbox-bg", 30, 30)
+                    span.custom-toggle__label Нажимая «Отправить» вы&nbsp;соглашаетесь с #[a(href="docs/subscription-terms.pdf", target="_blank", rel="noopener noreferrer").link Условиями] подписки на рассылку.
+                    span.custom-toggle__error Согласие является обязательным
+              button.button.button--dark.contacts-form__button-submit(type="submit", aria-label="Отправить форму") Отправить
+                +icon('button-bg-submit', "100%", 44).button__bg.is-hidden
+                +icon('button-bg-submit-mob', "100%", 28).button__bg

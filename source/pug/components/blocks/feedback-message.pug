@@ -1,0 +1,8 @@
+mixin feedback-message()
+  .feedback-message
+    //- вставлять блоки во внешний контейнер неверно
+    //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    +icon("icon-starlight-big", 124, 124).icon-starlight
+    +icon("loop-line", 144, 162).loop-line
+    .container
+      p.feedback-message__title В RuStore мы создаём платформу для&nbsp;ваших разработок, поэтому обратная связь для нас особенно важна.

@@ -1,0 +1,16 @@
+mixin form-input(props)
+  - const validateType = props.dataValidateType ? props.dataValidateType : false;
+  - const limitations = props.limitations ? props.limitations : false;
+  - const matrix = props.matrix ? props.matrix : false
+  - const matrixLimitations = props.matrixLimitations ? props.matrixLimitations : false
+  - const inputType = props.type ? props.type : 'text';
+  - const inputMinLength = props.inputMinLength ? props.inputMinLength : false
+  - const inputMaxLength = props.inputMaxLength ? props.inputMaxLength : false
+
+  .custom-input(data-validate-type=validateType, data-limitations=limitations, data-matrix=matrix, data-matrix-limitations=matrixLimitations)&attributes(attributes)
+    label(for=props.id) !{props.label}
+    if (props.isTextarea)
+      textarea(id=props.id, name=props.name, rows="10", cols="45", placeholder=props.placeholder)
+    else
+      input(id=props.id, type=props.inputType, name=props.name, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=props.placeholder)
+    span !{props.errorText}

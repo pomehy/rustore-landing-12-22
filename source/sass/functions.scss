@@ -1,0 +1,7 @@
+@function size($size-in-px) {
+  @return $size-in-px / 12.8px * 1rem;
+}
+
+@function size-mob($size-in-px) {
+  @return $size-in-px / 3.2px * 1rem;
+}

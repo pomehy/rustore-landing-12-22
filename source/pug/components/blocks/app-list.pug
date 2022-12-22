@@ -1,0 +1,82 @@
+-
+  const appList = [
+    {
+      title: 'VK Музыка',
+      logo: {
+        path: 'content/apps',
+        image: 'vk-music',
+        format: 'png',
+        width: 107,
+        height: 107,
+        altText: 'Лого VK Музыки',
+      },
+      bonus: '3 месяца бесплатно',
+      description: '3 месяца бесплатно для всех новых пользователей! Огромная&nbsp;библиотека музыки и&nbsp;эксклюзивные релизы!',
+      url: 'https://apps.rustore.ru/app/com.uma.musicvk',
+    },
+    {
+      title: 'OKKO',
+      logo: {
+        path: 'content/apps',
+        image: 'okko',
+        format: 'png',
+        width: 107,
+        height: 107,
+        altText: 'Лого кинотеатра OKKO',
+      },
+      bonus: '60 дней бесплатно',
+      description: '60 дней бесплатного просмотра,&nbsp;тысячи фильмов для&nbsp;новых пользователей.',
+      url: 'https://apps.rustore.ru/app/ru.more.play',
+    },
+    {
+      title: 'МВидео',
+      logo: {
+        path: 'content/apps',
+        image: 'mvideo',
+        format: 'png',
+        width: 107,
+        height: 107,
+        altText: 'Лого МВидео',
+      },
+      bonus: '500 бонусов',
+      description: `500 бонусных баллов на&nbsp;любые&nbsp;покупки в&nbsp;сетях<br>МВидео.`,
+      url: 'https://apps.rustore.ru/app/com.uma.musicvk',
+    },
+    {
+      title: 'Эльдорадо',
+      logo: {
+        path: 'content/apps',
+        image: 'eldorado',
+        format: 'png',
+        width: 107,
+        height: 107,
+        altText: 'Лого Эльдорадо',
+      },
+      bonus: '500 бонусов',
+      description: '500 бонусных баллов на&nbsp;любые&nbsp;покупки в сетях Эльдорадо.',
+      url: 'https://apps.rustore.ru/app/com.uma.musicvk',
+    },
+  ]
+
+mixin app-list()
+  section.app-list
+    h2.visually-hidden Список приложений с бонусами
+    //- вставлять блоки во внешний контейнер неверно
+    //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    .app-list__container
+      //- p.app-list__text В нём вас ждём гарантированный доступ к привычным приложениям и другие бонусы:
+      .app-list__grid
+        each item in appList
+          article.app-item
+            .app-item__header
+              .app-item__logo
+                +picture(item.logo.path, item.logo.image, item.logo.format, item.logo.width, item.logo.height, item.logo.altText)
+              h3.app-item__name !{item.title}
+            .app-item__info
+              .app-item__bonus !{item.bonus}
+              p.app-item__description !{item.description}
+              a(href=item.url).app-item__button.button Скачать и получить бонусы
+                +icon('button-sm', "100%", 28).button__bg.is-hidden
+                +icon('button-sm', "100%", 28).button__bg
+                +icon('arrow-right-small', 16, 16).button__arrow
+      a(href="#").app-list__link.link Подробнее о предложении
