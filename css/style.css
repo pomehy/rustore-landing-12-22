@@ -1379,3 +1379,9 @@ button,
     line-height: 5rem;
   }
 }
+
+@media (max-width: 479px) {
+  .app-item__bonus {
+    border: 1px solid #ff3985;
+  }
+}
