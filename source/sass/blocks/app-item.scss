@@ -119,6 +119,10 @@
 
       border-radius: size-mob(16px);
     }
+
+    @include vp-479 {
+      border: 1px solid $color-pink;
+    }
   }
 
   &__description {
