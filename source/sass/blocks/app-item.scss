@@ -3,7 +3,7 @@
   grid-template-columns: size(290px) 1fr;
   column-gap: size(110px);
 
-  padding: size(43px) size(90px) size(40px) size(100px);
+  padding: size(43px) size(74px) size(40px) size(100px);
   min-height: size(287px);
   margin-bottom: size(-2px);
   background-color: $color-default-white;
@@ -106,6 +106,7 @@
     border-radius: size(15.5px);
 
     @include vp-767 {
+      margin-top: size-mob(2px);
       margin-bottom: size-mob(39px);
 
       padding-top: size-mob(3px);

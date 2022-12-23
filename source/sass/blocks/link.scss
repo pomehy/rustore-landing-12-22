@@ -5,7 +5,7 @@
   padding: size(12px) size(20px);
   margin: size(-12px) size(-20px);
 
-  transition: opacity $trans-default;
+  transition: opacity $trans-default, color $trans-default;
 
   &::before {
     content: "";
@@ -18,13 +18,18 @@
     height: size(1px);
 
     background-color: $color-primary-blue;
+    transition: background-color $trans-default;
   }
 
   @media (hover: hover),
   screen and (min-width: 0\0) {
     &:hover,
     &:focus-visible {
-      opacity: 0.7;
+      color: $color-pink;
+
+      &::before {
+        background-color: $color-pink;
+      }
     }
 
     &:active {

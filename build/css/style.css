@@ -786,6 +786,8 @@ button,
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .button__bg {
@@ -793,6 +795,10 @@ button,
   z-index: -1;
   height: 3.4375rem;
   color: #0077ff;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .button__arrow {
@@ -801,6 +807,8 @@ button,
   width: 1.25rem;
   height: 1.25rem;
   margin-left: 0.46875rem;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .button--white {
@@ -836,8 +844,8 @@ button,
   display: inline-flex;
   padding: 0.9375rem 1.5625rem;
   margin: -0.9375rem -1.5625rem;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .link::before {
@@ -848,6 +856,8 @@ button,
   width: calc(100% - 3.125rem);
   height: 0.07813rem;
   background-color: #0077ff;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .round {
@@ -928,7 +938,7 @@ button,
   -webkit-column-gap: 8.59375rem;
   -moz-column-gap: 8.59375rem;
   column-gap: 8.59375rem;
-  padding: 3.35938rem 7.03125rem 3.125rem 7.8125rem;
+  padding: 3.35938rem 5.78125rem 3.125rem 7.8125rem;
   min-height: 22.42188rem;
   margin-bottom: -0.15625rem;
   background-color: #ffffff;
@@ -1034,18 +1044,28 @@ button,
 } */
 
 @media (hover: hover), screen and (min-width: 0\0) {
-  .button:hover,
-  .button:focus-visible {
-    opacity: 0.7;
+  .button--white:hover,
+  .button--white:focus-visible {
+    color: #ffffff;
+  }
+
+  .button:hover .button__bg,
+  .button:focus-visible .button__bg {
+    color: #ff3985;
   }
 
   .button:active {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   .link:hover,
   .link:focus-visible {
-    opacity: 0.7;
+    color: #ff3985;
+  }
+
+  .link:hover::before,
+  .link:focus-visible::before {
+    background-color: #ff3985;
   }
 
   .link:active {
@@ -1334,6 +1354,7 @@ button,
   }
 
   .app-item__bonus {
+    margin-top: 0.625rem;
     margin-bottom: 12.1875rem;
     padding-top: 0.9375rem;
     padding-right: 4.375rem;
